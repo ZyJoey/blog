@@ -29,7 +29,7 @@
 		<div class="right">
 			<div id="rightContent">
 				<?php
-					$dbc=mysqli_connect('qdm149630189.my3w.com','qdm149630189','zhouyi6595891','qdm149630189_db')or die('Error connect sql');
+					$dbc=mysqli_connect()or die('Error connect sql');
 					mysqli_query($dbc,"set names utf8");
 					$query="select * from essay_message order by date desc limit 5";
 					$data=mysqli_query($dbc,$query);
