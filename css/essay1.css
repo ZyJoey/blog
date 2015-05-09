@@ -1,0 +1,153 @@
+body,div,header{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../images/body-bg.png) repeat;
+	font-family: Microsoft YaHei;
+	color: #ffcc00;
+}
+header{
+	background: url(../images/header.png) repeat-x;
+	width: 100%;
+	height: 45px;
+}
+h1{
+	text-align: center;
+	font-family:KaiTi;
+	font-size: 3em;
+}
+article .head-img{
+	display: block;
+	width: 800px;
+	height: 200px;
+	opacity: 0.8;
+	border-radius: 20px;
+	margin: 0 auto 10px;
+}
+.audio{
+	position: relative;
+	/*margin: 0 35% 40px;*/
+}
+.audio .audio-style{
+	position: absolute;
+	top: -140px;	 
+	width: 55px;
+	height:50px;
+	margin: 0;
+	background-color: rgba(00,00,00,0.5);
+	border-radius: 10px;
+	overflow: hidden;
+	transition:width 1s linear 0;
+	-webkit-transition:width 1s linear 0;
+	-moz-transition:width 1s linear 0;
+	-ms-transition:width 1s linear 0;
+}
+.audio .audio-style:hover{
+	width: 320px;
+}
+.audio img{
+	padding: 10px;
+	margin-right: 5px;
+	float: left;
+}
+.audio .name{ 
+	font-size: 0.8em;
+	color:#ffcc00;
+}
+.audio .audio-style .progress-bar{
+	display: inline-block;
+	width: 180px;
+	height: 5px;
+	margin: 0;
+	background-color: rgba(102,102,102,0.8);
+	outline: none;
+}
+.audio .audio-style .progress-bar .current-progress{
+	width:0;
+	margin: 0;
+	background-color: rgba(255,204,00,0.8);
+	height: 5px;
+}
+.audio time{
+	font-size: 0.8em;
+}
+.publish-time{
+	/*margin-left:20%; */
+}
+.labels{
+	position: relative;
+	right: 2%;
+}
+.labels a{
+	position: absolute;
+	top: -30px;
+	right: 0;
+	border-radius: 10px;
+	color: #ffffff;
+	padding: 5px 10px;
+	margin: 5px;
+	-webkit-transition-duration:0.8s;
+	-moz-transition-duration:0.8s;
+	-ms-transition-duration:0.8s;
+	-o-transition-duration:0.8s;
+
+}
+.labels a:hover{
+	opacity: 0.7;
+}
+article .labels .front-end-label{
+	background-color: #6699cc;
+}
+article .labels .life-label{
+	background-color: #cc9999;
+}
+article .labels .other-label{
+	background-color: #99cc99;
+}
+section{
+	margin-top: 40px;
+	margin-bottom: 100px;
+}
+article div,article h2{
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+article section .inner_h2{ 
+	padding: .25em 0;
+}
+article section .essay2_div{
+	margin-bottom: 60px;
+}
+article p{
+	font-size: 1em;
+	margin:1em auto;
+	line-height: 1.5em;
+	text-indent: 2em;
+	width: 800px;
+}
+article .inner_p{
+	margin-left: 0;
+	margin-right: 0;
+	width: auto;
+}
+article section .quote{
+	border-left: 2px solid #99cc99;
+}
+section img{
+	display: block;
+	margin: 0 auto;
+}
+.last-essay,.next-essay{
+	text-decoration: none;
+	color: #99cc99;
+	margin-left:20%;
+	padding-bottom: 40px;
+}
+.last-essay:hover{
+	text-decoration: underline;
+}
+.next-essay:hover{
+	text-decoration: underline;
+}

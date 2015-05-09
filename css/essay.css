@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft YaHei", "HeiTi";
+  color: #ffcc00;
+  background: url("../images/body-bg.png");
+}
+header {
+  background: url("../images/header.png") repeat-x;
+}
+header .header-div {
+  width: 960px;
+  margin: 0 auto;
+  padding: 60px 0 20px;
+  text-align: center;
+}
+header .header-div h1 {
+  font-family: KaiTi;
+  font-size: 3em;
+  padding: 20px 0;
+}
+header .header-div .head-img {
+  width: 850px;
+  height: 210px;
+  opacity: 0.9;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+header .header-div .audio {
+  position: relative;
+  text-align: left;
+}
+header .header-div .audio .audio-style {
+  position: absolute;
+  top: -140px;
+  left: 55px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  -webkit-transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -ms-transition: width 1s linear;
+  transition: width 1s linear;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+header .header-div .audio .audio-style:hover {
+  width: 320px;
+}
+header .header-div .audio .audio-style .progress-bar {
+  display: inline-block;
+  width: 180px;
+  height: 5px;
+  background-color: rgba(102, 102, 102, 0.8);
+}
+header .header-div .audio .audio-style .progress-bar .current-progress {
+  width: 0;
+  margin: 0;
+  background-color: rgba(255, 204, 0, 0.8);
+  height: 5px;
+}
+header .header-div .audio img {
+  padding: 10px 0 10px 10px;
+  margin-right: 10px;
+  float: left;
+}
+header .header-div .audio .name {
+  font-size: 0.8em;
+}
+header .header-div .audio time {
+  font-size: 0.8em;
+}
+article {
+  position: relative;
+  width: 850px;
+  margin: 0 auto;
+}
+article .labels {
+  position: absolute;
+  top: -5px;
+  right: 0;
+}
+article .labels .like {
+  position: relative;
+  cursor: pointer;
+  top: 8px;
+  width: 28px;
+}
+article .labels span::before {
+  content: "(";
+}
+article .labels span::after {
+  content: ")";
+}
+article .labels a {
+  padding: 5px 10px;
+  margin: 5px;
+  color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+article .labels .front-end-label {
+  background-color: #6699cc;
+}
+article .labels .life-label {
+  background-color: #cc9999;
+}
+article .labels .other-label {
+  background-color: #99cc99;
+}
+article section {
+  margin: 40px 0 100px 0;
+}
+article section p {
+  font-size: 1em;
+  margin: 1em auto;
+  line-height: 1.5em;
+  text-indent: 2em;
+}
+article section img {
+  display: block;
+  margin: 5px auto;
+}
+article section h2,
+article section h3,
+article section h4,
+article section h5,
+article section h6 {
+  display: block;
+  margin: 20px 0;
+}
+.menu {
+  position: relative;
+  margin: 0 auto;
+  width: 960px;
+}
+.menu div {
+  width: 900px;
+  float: left;
+}
+.menu div .last-essay,
+.menu div .next-essay {
+  text-decoration: none;
+  color: #99cc99;
+  padding: 0 120px 40px;
+}
+.menu div .last-essay span:hover,
+.menu div .next-essay span:hover {
+  text-decoration: underline;
+}
+.menu .top {
+  position: fixed;
+  visibility: hidden;
+  bottom: 40px;
+}
+.likeIcon {
+  -webkit-animation: scale-like 1s ease;
+  -moz-animation: scale-like 1s ease;
+  -ms-animation: scale-like 1s ease;
+  animation: scale-like 1s ease;
+}
+@-webkit-keyframes scale-like {
+  0% {
+    -wekit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.5);
+  }
+  100% {
+    -webkit-transfotm: scale(1);
+  }
+}
+@-moz-keyframes scale-like {
+  0% {
+    -moz-transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.5);
+  }
+  100% {
+    -moz-transfotm: scale(1);
+  }
+}
+@-ms-keyframes scale-like {
+  0% {
+    -ms-transform: scale(1);
+  }
+  50% {
+    -ms-transform: scale(1.5);
+  }
+  100% {
+    -ms-transfotm: scale(1);
+  }
+}
+@keyframes scale-like {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transfotm: scale(1);
+  }
+}
