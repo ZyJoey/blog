@@ -28,12 +28,12 @@ function createRequest() {
 	var top=document.getElementById("top");
 	top.onclick=function(){
 		var scrollTop=document.body.scrollTop||document.document;
-		var body=document.getElementsByTagName("body");
+		var body=document.getElementsByTagName("body")[0];
 		var i=scrollTop;
 		var set=setInterval(function(){
-			var bodyTop=body[0].scrollTop;
+			var bodyTop=body.scrollTop;
 			if(bodyTop>0){
-				body[0].scrollTop-=100;
+				body.scrollTop-=100;
 			}else if(bodyTop==0){
 				clearInterval(set);
 			}
@@ -52,14 +52,13 @@ function createRequest() {
 	function likeIcon(){
 		this.className+=" likeIcon";
 		this.src="images/like.png";
-		var text=document.getElementsByTagName("h1");
-		var title=text[0].innerText;
+		var title=document.getElementsByTagName("h1")[0].firstChild.nodeValue;
 		var request=createRequest();
 		if(request==null){
 			alert("Unable to create request.");
 			return;
 		}
-		var url="getLike.php?title="+title;
+		var url="php/getLike.php?title="+title;
 		request.open("GET",url,true);
 		request.onreadystatechange=likeBack;
 		request.send(null);
@@ -68,10 +67,14 @@ function createRequest() {
 		if(request.readyState==4){
 			if(request.status==200){
 				var span=like.nextSibling;
-				span.innerText=request.responseText;
+				var response=request.responseText;
+				if(response!='null'){
+					span.replaceChild(document.createTextNode(response),span.firstChild);
+				};
 				like.onclick=null;
 			}
 		}
 	}
 })();
+
 

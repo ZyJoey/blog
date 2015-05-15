@@ -14,27 +14,20 @@ function createRequest() {
   }	
   return request;
 };
-/*选择该节点的所有邻节点,返回数组*/
-function siblings(ele){
-	var element=ele.parentNode.children;
-	var i;
-	var sib=[];
-	for(i=0;i<element.length;i++){
-		if(element[i]!=ele){
-			sib.push(element[i]);
-		}
-	}
-	return sib;
-}
 /*标签筛选*/
 (function(){
+	var more=document.getElementById("more");
 	function selectLabel(){
-		this.siblings=siblings(this);
 		more.onclick=moreEssay;
-		more.innerHTML="查看更多文章";
+		var content=document.createTextNode("查看更多文章");
+		more.replaceChild(content,more.firstChild);
 		var k;
-		for(k=0;k<this.siblings.length;k++){
-			this.siblings[k].className="";
+		var siblings=this.parentNode.children;
+		for(k=0;k<siblings.length;k++){
+			if(siblings[k].className=="there"){
+				siblings[k].className="";
+				break;
+			}
 		}
 		this.className="there";
 		var text=this.getAttribute("data-label");
@@ -43,7 +36,7 @@ function siblings(ele){
 			alert("Unable to create request.");
 			return;
 		}
-		var url="getLabel.php?label="+escape(text);
+		var url="php/getLabel.php?label="+escape(text);
 		request.open("GET",url,true);
 		request.onreadystatechange=displaySection;
 		request.send(null);
@@ -70,11 +63,11 @@ function siblings(ele){
 	}
 	/*获取更多文章*/
 	function moreEssay(){
-		var text=this.innerText;
-		var there=document.getElementsByClassName("there");
+		var text=this.firstChild;
+		var there=document.getElementsByClassName("there")[0];
 		var line=document.getElementById("rightContent").getElementsByTagName("section").length;
-		var label=there[0].getAttribute("data-label");
-		var regexp=/最后/;
+		var label=there.getAttribute("data-label");
+		var regexp=/没有/;
 		if(regexp.test(text)){
 			return;
 		}else{
@@ -84,7 +77,7 @@ function siblings(ele){
 				alert("Unable to create request.");
 				return;
 			}
-			var url="getLabel.php?label="+escape(label)+"&line="+escape(line);
+			var url="php/getLabel.php?label="+escape(label)+"&line="+escape(line);
 			request.open("GET",url,true);
 			request.onreadystatechange=addEssay;
 			request.send(null);
@@ -95,25 +88,26 @@ function siblings(ele){
 			if(request.status==200){
 				var regexp=/no_more/;
 				if(regexp.test(request.responseText)){
-					more.innerHTML="没有了(⊙﹏⊙)";
+					var content=document.createTextNode("没有了(⊙﹏⊙)");
+					more.replaceChild(content,more.firstChild);
 					more.onclick=null;
 					var result=request.responseText.replace("no_more","");
 				}else{
-					more.innerHTML="查看更多文章";
+					var content=document.createTextNode("查看更多文章");
+					more.replaceChild(content,more.firstChild);
 				}
 				var rightContent=document.getElementById("rightContent");
 				rightContent.innerHTML+=result;	
 			}
 		}
 	}
-	var more=document.getElementById("more");
 	more.onclick=moreEssay;
 })();
 /*返回顶部*/
 (function(){
 	window.onscroll=function(){
 		var top=document.getElementById("top");
-		var scrollTop=document.body.scrollTop||document.document;
+		var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
 		if(scrollTop>="200"){
 			top.style.visibility="visible";
 		}else{
@@ -122,7 +116,7 @@ function siblings(ele){
 	};
 	var top=document.getElementById("top");
 	top.onclick=function(){
-		var scrollTop=document.body.scrollTop||document.document;
+		var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
 		var body=document.getElementsByTagName("body");
 		var i=scrollTop;
 		var set=setInterval(function(){

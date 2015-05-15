@@ -12,9 +12,9 @@
 			<nav>
 				<ul id="label">
 					<li class="there" data-label="all">所有</li>
-					<li data-label="front">前端</li>
+					<li data-label="note">笔记</li>
+					<li data-label="work">作品</li>
 					<li data-label="life">生活</li>
-					<li data-label="other">其它</li>
 				</ul>
 			</nav>
 			<img src="images/easy-life.png"/>
@@ -23,13 +23,13 @@
 	<div class="main">
 		<div class="left">
 			<div class="notice">
-				<p></p>
+				<p>(～￣▽￣)～</p>
 			</div>
 		</div>
 		<div class="right">
 			<div id="rightContent">
 				<?php
-					$dbc=mysqli_connect('qdm149630189.my3w.com','qdm149630189','zhouyi6595891','qdm149630189_db')or die('Error connect sql');
+					$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
 					mysqli_query($dbc,"set names utf8");
 					$query="select * from essay_message order by date desc limit 5";
 					$data=mysqli_query($dbc,$query);
