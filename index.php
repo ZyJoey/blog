@@ -2,14 +2,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" charset="utf-8"/>
+	<meta name="viewport" content="initial-scale=1.0,width=device-width" />
 	<title>简单</title>
+	<link rel="shortcut Icon" href="images/head-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mobility.css" media="screen and (max-width:800px)">
 </head>
 <body>
 	<header>
 		<div class="header-div">
 			<h1>简单</h1>
 			<nav>
+				<img id="navImg" class="nav-img" src="images/nav.png"/>
 				<ul id="label">
 					<li class="there" data-label="all">所有</li>
 					<li data-label="note">笔记</li>
@@ -29,7 +33,7 @@
 		<div class="right">
 			<div id="rightContent">
 				<?php
-					$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
+					$dbc=mysqli_connect()or die('Error connect sql');
 					mysqli_query($dbc,"set names utf8");
 					$query="select * from essay_message order by date desc limit 5";
 					$data=mysqli_query($dbc,$query);
