@@ -36,17 +36,3 @@
 	};
 	downSection();
 })();
-/*文章链接*/
-/*(function(){
-	var section=document.getElementById("rightContent").getElementsByTagName("section");
-	for(var i=0;i<section.length;i++){
-		section[i].addEventListener("mousedown",function(event){
-			var a=this.getElementsByTagName("a")[0];
-			var href=a.getAttribute("href");
-			location.href=href;
-			if(event.target==a){
-				event.preventDefault();
-			}
-		},false);
-	}
-})();*/
