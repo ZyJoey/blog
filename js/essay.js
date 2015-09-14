@@ -41,7 +41,7 @@ function createRequest() {
 	};
 })();
 /*点赞*/
-(function(){
+/*(function(){
 	var like=document.getElementById("like");
 	var likeSrc=like.getAttribute("src");
 	if(likeSrc=="images/dislike.png"){
@@ -75,6 +75,35 @@ function createRequest() {
 			}
 		}
 	}
+})();*/
+/*左右滑屏事件及返回*/
+(function(){
+	if(window.screen.width<=800){
+		var startX,startY,endX,endY,distanceX,distanceY;
+		function horizontal(event){
+			distanceX=startX-endX;
+			distanceY=Math.abs(startY-endY);
+			if(distanceX>40&&distanceY<5){
+				var next=document.getElementById("nextEssay").getAttribute("href");
+				location.href=next;
+			}else if(distanceX<-40&&distanceY<5){
+				var last=document.getElementById("lastEssay").getAttribute("href");
+				location.href=last;
+			}
+		}
+		document.body.addEventListener("touchstart",function(event){
+			startX=event.touches[0].clientX;
+			startY=event.touches[0].clientY;
+			document.body.addEventListener("touchmove",function(event){
+				endX=event.changedTouches[0].clientX;
+				endY=event.changedTouches[0].clientY;
+				horizontal();
+			},false);
+		},false);
+		var back=document.getElementById("mobilityBack");
+		back.addEventListener("touchend",function(event){
+			location.href="index.php";
+		},false);
+	}
 })();
-
 
