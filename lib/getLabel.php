@@ -10,13 +10,13 @@
 		
 	}
 	$data=mysqli_query($dbc,$query);
-	if(mysqli_num_rows($data)<=5){
+	if(mysqli_num_rows($data) < 5){
 		echo "no_more";
 	}
 	while($row=mysqli_fetch_array($data)){
 		echo '<section class=" '.$row["label"].' ">';
 		echo '<time class=" '.$row["label"].'-label" >'.$row["date"].'</time>';
-		echo '<h2><a href=" '.$row["url"].' " target="_blank"> '.$row["blog_title"].'</a></h2>';
+		echo '<h2><a href="essay.php?id='.$row["id"].'" target="_blank">'.$row["blog_title"].'</a></h2>';
 		echo '<div class="icon">';
 		echo '<img class="view-icon" src="images/view.png"/>';
 		echo '<span class="view">'.$row["view"].'</span>';
@@ -24,9 +24,6 @@
 		echo '<span class="like">'.$row["praise"].'</span></div>';
 		echo '<div class="content">'.$row["content"];
 		echo '<div class="label-box">';
-		if($row["music"]){
-			echo '<img class="music" src="images/music.png" />';
-		};
 		echo '<span class="label '.$row["label"] .'-label">'.$row["label_name"].'</span></div></div></section>';
 	}
 	mysqli_close($dbc);

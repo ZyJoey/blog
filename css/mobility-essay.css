@@ -54,20 +54,49 @@
   .menu {
     width: 100%;
   }
-  .menu div {
+  .menu .menu-essay {
     width: 90%;
     margin: 10px 5%;
     text-align: left;
     clear: both;
   }
-  .menu div .last-essay,
-  .menu div .next-essay {
+  .menu .menu-essay .last-essay,
+  .menu .menu-essay .next-essay {
+    position: relative;
     display: block;
+    max-width: 100%;
     padding: 0;
+    margin-bottom: 10px;
   }
-  .menu .top {
-    width: 24px;
-    right: 0;
-    bottom: 0;
+  .menu-icon {
+    right: 5px;
+    bottom: 5px;
   }
+}
+.comment{
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+.comment-container{
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+.comment-container h2{
+  margin-left: 0;
+}
+.comment-form{
+  width: 100%;
+}
+.comment-text,.comment-button{
+  width: 100%;
+  margin: 10px 0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+.comment-num{
+  display: none;
 }

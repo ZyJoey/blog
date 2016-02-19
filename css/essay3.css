@@ -1,0 +1,20 @@
+.gallery{
+	width: 263px;
+	height: 500px;
+	margin: 0 auto;
+	background: url(../images/iphone6-bg.png) no-repeat;
+}
+.gallery div{
+	width: 196px;
+	height: 348px;
+	padding:77px 0;
+	margin: 0 34px;
+	overflow: hidden;
+}
+.gallery img{
+	position: relative;
+	width: 1176px;
+	height: auto;
+	margin:0;
+	left:0;
+}

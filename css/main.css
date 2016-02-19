@@ -28,6 +28,9 @@ header {
 .header-div nav {
   position: relative;
 }
+.header-div nav .nav-img {
+  display: none;
+}
 .header-div nav ul {
   position: absolute;
   width: 288px;
@@ -49,13 +52,6 @@ header {
 }
 .there {
   color: #ffffcc;
-}
-.clearfix::after {
-  content: " ";
-  display: block;
-  height: 0;
-  visibility: hidden;
-  clear: both;
 }
 .main {
   width: 960px;
@@ -107,6 +103,9 @@ header {
   border: 25px solid;
   border-color: rgba(51, 51, 51, 0.4) transparent transparent transparent;
 }
+.load-tip{
+  margin: 0 20px 20px; 
+}
 .main .right {
   float: left;
   color: #ffffcc;
@@ -136,7 +135,6 @@ header {
   right: 50px;
   padding: 2px 10px;
   color: #fff;
-  /*font-family: cursive;*/
 }
 .main .right section h2 {
   position: relative;
@@ -151,14 +149,14 @@ header {
 .main .right section h2 a:hover {
   color: #ffcc00;
 }
-.main .right section .front-end-label {
+.main .right section .note-label {
   background-color: rgba(102, 204, 204, 0.8);
 }
-.main .right section .life-label {
+.main .right section .work-label {
   background-color: rgba(204, 153, 153, 0.8);
 }
-.main .right section .other-label {
-  background-color: rgba(154, 204, 204, 0.9);
+.main .right section .life-label {
+  background-color: rgba(154, 204, 154, 0.8);
 }
 .main .right section .icon {
   display: inline-block;
@@ -189,10 +187,6 @@ header {
   line-height: 28px;
   text-indent: 32px;
 }
-.main .right section .content .music {
-  position: relative;
-  top: 2px;
-}
 .main .right section .content .label-box {
   position: absolute;
   right: 40px;
@@ -219,6 +213,7 @@ header {
   text-align: center;
   color: rgba(255, 255, 204, 0.9);
   background-color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
 }
 .loading {
   position: relative;
@@ -248,12 +243,44 @@ header {
     transform: rotate(360deg);
   }
 }
-.top {
+/*.top {
   visibility: hidden;
   position: fixed;
   bottom: 50px;
+  right: 40px;
+}*/
+.menu-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
 }
-.back-top {
+.top{
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 32px;
+  height: 0;
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: rgb(204, 153, 153);
+  background-image: url(../images/menu-icon.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0;
+  background-position: center -93px; 
+  transition:all 1s;
+  -webkit-transition:all 1s;
+  -moz-transition:all 1s;
+  -mz-transition:all 1s;
+}
+.show{
+  height: 32px;
+  opacity: 1; 
+}
+/*.back-top {
   transform: translateY(200);
   -webkit-tansform: translateY(200);
+}*/
+.mask-layer{
+  display: none;
 }

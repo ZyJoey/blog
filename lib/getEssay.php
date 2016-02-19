@@ -12,9 +12,11 @@
 	$dataSec  =mysqli_query($dbc,$querySec);
 	$times    =mysqli_num_rows($dataSec);
 	if(mysqli_num_rows($data)!=1){
-		echo '<img id="like" class="like" src="images/dislike.png"/><span>'.$times.'</span>';
+	/*	echo '<div class="like icon none" id="like"  title="'.$times.'"></div>';*/
+	echo '<div class="like icon none" id="like"  title="赞我<(￣ˇ￣)/"></div>';
 	}else{
-		echo '<img id="like" class="like" src="images/like.png"/><span>'.$times.'</span>';
+		/*echo '<div class="like icon" id="like"  title="'.$times.'"></div>';*/
+		echo '<div class="like icon" id="like"  title="已经赞过啦(>▽<)"></div>';
 	};
 	$queryThird="select * from message_view where blog_title='$title' and ip='$ip' ";
 	$dataThird=mysqli_query($dbc,$queryThird);
