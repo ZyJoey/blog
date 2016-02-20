@@ -55,6 +55,7 @@
 	<meta charset="utf-8"/>
 	<link rel="shortcut Icon" href="images/head-icon.png">
 	<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+	<link rel="stylesheet" type="text/css" href="css/code.min.css">
 	<link rel="stylesheet" type="text/css" href="css/essay.css">
 	<?php 
 		if($style){

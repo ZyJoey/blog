@@ -4,7 +4,7 @@
 }
 body {
   font-family: "Microsoft YaHei", "HeiTi";
-  color: #ffcc00;
+  color: rgba(255,204,00,0.9);
   background: url("../images/body-bg.png");
 }
 header {
@@ -526,8 +526,21 @@ pre::-webkit-scrollbar-thumb:window-inactive {
 
 /*目录*/
 
+.category{
+  margin-left: 0;
+}
+.category a:hover{
+  color: #99cc99;
+  text-decoration: none;
+}
 .category li{
   list-style: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.category li:before{
+  content: ">"; 
+  margin-right: 10px;
 }
 .category a{
   text-decoration: none;
