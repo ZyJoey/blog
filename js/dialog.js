@@ -11,9 +11,9 @@ var dialog = (function(){
 		d_close;
 	function getTemplate(state,data){
 		template = '<div class="d-{{state}}">'
-			+'<div class="d-main">'
+			+'<div id="d_main" class="d-main">'
 			+'<div class="d-content">{{data}}</div>'
-			+'<i id="d_close" class="d-close"></i>'
+			+'<i class="d-close"></i>'
 			+'</div>'
 			+'</div>';
 		template = template.replace(/{{state}}/,state).replace(/{{data}}/,data);
@@ -31,8 +31,8 @@ var dialog = (function(){
 		closeBtn();
 	}
 	function closeBtn(){
-		d_close = document.getElementById("d_close");
-		d_close.addEventListener("mouseup",close,false);
+		d_main = document.getElementById("d_main");
+		d_main.addEventListener("mouseup",close,false);
 	}
 	function close(time){
 		if(!dialog){

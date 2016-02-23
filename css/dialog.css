@@ -46,3 +46,8 @@
 .d-error .d-main{
 	background-color:  #A52A2A;
 }
+@media screen and (max-width: 800px){
+	.d-close{
+		display: none;
+	}
+}
