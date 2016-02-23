@@ -99,9 +99,9 @@ var validatorFunc = function(){
 form.onsubmit = function(){
 	var errorMsg = validatorFunc();
 	if(errorMsg){
-		alert(errorMsg);
+		dialog.error(errorMsg);
 		return false;
 	}else{
-		alert("您的心意我会帮您转告主人\(^o^)/");
+		dialog.success("您的心意我会帮您转告主人\(^o^)/");
 	}
 };

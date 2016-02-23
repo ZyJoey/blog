@@ -1,0 +1,48 @@
+#dialog{
+	position: fixed;
+	top: 5%;
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	opacity: 0;
+	z-index: 999;
+	transition:all .5s ease .5s;
+	-webkit-transition:all .5s ease .5s;
+	-moz-trainsition:all .5s ease .5s;
+}
+#dialog.d-bg{
+	opacity: 1;
+	top: 15%;
+}
+.d-main{
+	position: relative;
+	width: 60%;
+	padding: 10px 20px;
+	margin: 0 auto; 
+	border-radius: 5px;
+}
+.d-close{
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	background: url(../images/close.png);
+	transition:all .8s ease;
+	-webkit-transition:all .8s ease;
+	-moz-trainsition:all .8s ease;
+}
+.d-close:hover{
+	transform:rotate(30deg);
+}
+.d-content{
+	text-align: center;
+}
+.d-success .d-main{
+	background-color: #008B00;
+}
+.d-error .d-main{
+	background-color:  #A52A2A;
+}

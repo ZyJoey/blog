@@ -57,6 +57,7 @@
 	<meta name="viewport" content="initial-scale=1.0,width=device-width" />
 	<link rel="stylesheet" type="text/css" href="css/code.min.css">
 	<link rel="stylesheet" type="text/css" href="css/essay.css">
+	<link rel="stylesheet" type="text/css" href="css/dialog.css">
 	<?php 
 		if($style){
 			echo '<link rel="stylesheet" type="text/css" href="css/'.$style.'">';
@@ -169,6 +170,7 @@
 	</div>
 	<script src="js/util.js"></script>
 	<script src="js/essay.js"></script>
+	<script src="js/dialog.js"></script>
 	<script src="js/validator.js"></script>
 	<?php
 		if($script){
