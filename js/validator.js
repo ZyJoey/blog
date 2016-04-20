@@ -98,10 +98,29 @@ var validatorFunc = function(){
 };
 form.onsubmit = function(){
 	var errorMsg = validatorFunc();
+	var data = {
+		"id" : window.location.search.split('=')[1],
+		"username" : form.username,
+		"email" : form.email,
+		"comment" : form.comment	
+	}
 	if(errorMsg){
 		dialog.error(errorMsg);
 		return false;
 	}else{
-		dialog.success("您的心意我会帮您转告主人\(^o^)/");
+		// dialog.success("您的心意我会帮您转告主人\(^o^)/");
+		Ajax.send({
+			type : "post",
+			url : "lib/comment.php",
+			data : data,
+			success:function(res){
+				if(res.code = 0){
+					dialog.success("提交成功\(^o^)/");
+				}else{
+					dialog.error(res.data.msg);
+				}
+			}
+		})
 	}
+	return false;
 };

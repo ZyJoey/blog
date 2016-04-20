@@ -11,7 +11,11 @@
 		like.removeClass("none");
 		var title=document.getElementsByTagName("h1")[0].firstChild.nodeValue;
 		var url="lib/getLike.php?title="+title;
-		Ajax.send("GET",url,likeBack);
+		Ajax.send({
+			type : "GET",
+			url : url,
+			success : likeBack
+		})
 	}
 	function likeBack(data){
 		if(data != 'null'){
@@ -64,9 +68,13 @@
 	cVerifyCode.addEventListener("click",getCode,false);
 	function getCode(){
 		var url = "lib/createCode.php";
-		Ajax.send("GET",url,function(){
-			cVerifyCode.src = url;
-		});
+		Ajax.send({
+			type : "GET",
+			url : url,
+			success : function(){
+				cVerifyCode.src = url;
+			}
+		})
 	}
 
 })();

@@ -62,23 +62,23 @@ var Ajax = (function(){
 		}	
 	  return request;
 	};
-	sendRequest = function(type,url,success,error){
-		var request = createRequest();
+	sendRequest = function(obj){
+		request = createRequest();
 		if(request == null){
-			alert("Unable to create request.");
+			console.error("Unable to create request.");
 			return;
 		}
-		request.open(type,url,true);
+		request.open(obj.type,obj.url,true);
 		request.onreadystatechange = function(){
 			if(request.readyState == 4){
 				if(request.status == 200){ 
-					success(request.responseText);					
+					obj.success(request.responseText);					
 				}else{
-					error();
+					obj.error();
 				}
 			}
 		};
-		request.send(null);
+		request.send(obj.data);
 	};
 	return {
 		send:sendRequest
