@@ -97,27 +97,41 @@ var validatorFunc = function(){
 	return errorMsg;
 };
 form.onsubmit = function(){
+	var submitBtn = document.getElementById('submitBtn');
+	submitBtn.setAttribute('disabled',true);
+	submitBtn.innerText = "提交中……";
+
 	var errorMsg = validatorFunc();
+
 	var data = {
-		"id" : window.location.search.split('=')[1],
-		"username" : form.username,
-		"email" : form.email,
-		"comment" : form.comment	
+		"id" : Number(window.location.search.split('=')[1]),
+		"username" : form.username.value,
+		"email" : form.email.value,
+		"verify" :form.verify.value,
+		"comment" : form.comment.value	
 	}
+
 	if(errorMsg){
 		dialog.error(errorMsg);
+		submitBtn.innerText = "提交";
+		submitBtn.removeAttribu('disabled',true);
 		return false;
 	}else{
-		// dialog.success("您的心意我会帮您转告主人\(^o^)/");
 		Ajax.send({
 			type : "post",
 			url : "lib/comment.php",
-			data : data,
+			data : JSON.stringify(data),
 			success:function(res){
-				if(res.code = 0){
-					dialog.success("提交成功\(^o^)/");
+				res = JSON.parse(res);
+				submitBtn.innerText = '提交';
+				if(res.code == 0){
+					dialog.success("提交成功\(^o^)/~");
+					setTimeout(function(){
+						window.location.reload(true);
+					},1000);
 				}else{
-					dialog.error(res.data.msg);
+					dialog.error(res.msg);
+					submitBtn.removeAttribute("disabled");
 				}
 			}
 		})

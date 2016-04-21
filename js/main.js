@@ -96,7 +96,11 @@
 		//发送请求
 		url = "lib/getLabel.php?label="+escape(text);
 		isSend = 1;
-		Ajax.send("GET",url,displaySection);
+		Ajax.send({
+			type : "GET",
+			url : url,
+			success : displaySection
+		});
 	}
 	function displaySection(data){
 		var result,content;
@@ -130,9 +134,14 @@
 		}else{
 			this.innerHTML="<image class='loading' src='images/loading.png'/>";
 			var url="lib/getLabel.php?label="+escape(label)+"&line="+escape(line);
-			Ajax.send("GET",url,addEssay,function(){
-				mark = 0;
-			});
+			Ajax.send({
+				type : "GET",
+				url : url,
+				success : addEssay,
+				error : function(){
+					mark = 0;
+				}
+			})
 		}
 	}
 

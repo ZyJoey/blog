@@ -38,11 +38,7 @@
 			<div class="notice">
 				<p>(～￣▽￣)～</p>
 			</div>
-			<!-- <ul class="list">
-				<li><a href="">music-player</a></li>
-				<li><a href="">蓝芒科技</a></li>
-				<li><a href=""></a></li>
-			</ul> -->
+
 		</div>
 		<div class="right">
 			<div id="loadTip" class="load-tip none">使劲加载中(⊙o⊙)…</div>
