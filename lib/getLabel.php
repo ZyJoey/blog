@@ -1,12 +1,11 @@
 <?php
-	$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
-	mysqli_query($dbc,"set names utf8");
+	include('./sqlInfo.php');
 	$label=$_REQUEST["label"];
 	if(isset($_REQUEST["line"])){
 		$line=$_REQUEST["line"];
-		$query="select * from essay_message where label like '%$label%' order by date desc limit $line,5";
+		$query="select * from essay_message where label like '%$label%' and isShow=0 order by date desc limit $line,5";
 	}else{
-		$query="select * from essay_message where label like '%$label%' order by date desc limit 5";
+		$query="select * from essay_message where label like '%$label%' and isShow=0 order by date desc limit 5";
 		
 	}
 	$data=mysqli_query($dbc,$query);
@@ -25,6 +24,7 @@
 		echo '<div class="content">'.$row["content"];
 		echo '<div class="label-box">';
 		echo '<span class="label '.$row["label"] .'-label">'.$row["label_name"].'</span></div></div></section>';
+		
 	}
 	mysqli_close($dbc);
 ?>

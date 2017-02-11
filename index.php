@@ -36,17 +36,16 @@
 	<div class="main">
 		<div class="left">
 			<div class="notice">
-				<p>(～￣▽￣)～</p>
+				<p>咦，你在看我的博客(づ｡◕‿‿◕｡)づ</p>
 			</div>
-
+			
 		</div>
 		<div class="right">
 			<div id="loadTip" class="load-tip none">使劲加载中(⊙o⊙)…</div>
 			<div id="rightContent">
 				<?php
-					$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
-					mysqli_query($dbc,"set names utf8");
-					$query="select * from essay_message order by date desc limit 5";
+					include('./lib/sqlInfo.php');
+					$query="select * from essay_message where isShow=0 order by date desc limit 5";
 					$data=mysqli_query($dbc,$query);
 					while($row=mysqli_fetch_array($data)){
 						echo '<section class=" '.$row["label"].' ">';

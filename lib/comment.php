@@ -4,9 +4,7 @@
 	$inputJSON = file_get_contents('php://input');
 	$input= json_decode( $inputJSON, TRUE );
 
-	$dbc=mysqli_connect('localhost','','','')or die('Error connect sql');
-	
-	mysqli_query($dbc,"set names utf8");
+	include('./sqlInfo.php');
 	date_default_timezone_set('prc');
 
 	class Res {

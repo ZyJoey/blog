@@ -1,12 +1,10 @@
 <?php 
 	session_start();
-
-	$dbc=mysqli_connect('localhost','','','')or die('Error connect sql');
-		mysqli_query($dbc,"set names utf8");
+	include('./lib/sqlInfo.php');
 	date_default_timezone_set('prc');
 	$url=$_SERVER["QUERY_STRING"];
 	$id=substr($url, 3);
-	$query="select * from essay_message where id=$id";
+	$query="select * from essay_message where id=$id and isShow=0";
 	$data=mysqli_query($dbc,$query) or die("");
 	while($row=mysqli_fetch_array($data)){
 		global $blog_title,$img,$content,$date,$label_name;
@@ -95,8 +93,7 @@
 		<div class="comment-container">
 			<h2>留言栏</h2>	
 			<?php 
-				$dbc=mysqli_connect('localhost','','')or die('Error connect sql');
-				mysqli_query($dbc,"set names utf8");
+				include('./lib/sqlInfo.php');
 				date_default_timezone_set('prc');
 				$querySec="select * from essay_comment where blog_title='$title' order by date asc ";
 				$dataSec=mysqli_query($dbc,$querySec) or die("Error");

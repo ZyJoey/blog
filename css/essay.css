@@ -8,7 +8,7 @@ body {
   background: url("../images/body-bg.png");
 }
 header {
-  background: url("../images/header.png") repeat-x;
+  //background: url("../images/header.png") repeat-x;
 }
 header .header-div {
   width: 960px;

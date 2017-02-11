@@ -1,6 +1,5 @@
 <?php
-	$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
-	mysqli_query($dbc,"set names utf8");
+	include('./sqlInfo.php');
 	date_default_timezone_set('prc');
 	$ip =$_SERVER["REMOTE_ADDR"];
 	$blog_title=$_REQUEST["title"];

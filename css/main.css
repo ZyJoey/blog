@@ -8,7 +8,7 @@ body {
   background: url("../images/body-bg.png");
 }
 header {
-  background: url("../images/header.png") repeat-x;
+  //background: url("../images/header.png") repeat-x;
 }
 .header-div {
   width: 960px;
@@ -94,13 +94,14 @@ header {
   width: 200px;
   height: 90px;
   background: url("../images/underline.png");
+  background-position: 0 -1px;
 }
 .main .left .notice::after {
   position: absolute;
   top: 140px;
   right: 25px;
   content: "";
-  border: 25px solid;
+  border: 15px solid;
   border-color: rgba(51, 51, 51, 0.4) transparent transparent transparent;
 }
 .load-tip{

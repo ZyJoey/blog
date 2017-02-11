@@ -1,6 +1,5 @@
 <?php
-	$dbc=mysqli_connect('localhost','root','','myblog')or die('Error connect sql');
-	mysqli_query($dbc,"set names utf8");
+	include('./lib/sqlInfo.php');
 	date_default_timezone_set('prc');
 	/*获取ip地址*/
 	$ip =$_SERVER["REMOTE_ADDR"];
