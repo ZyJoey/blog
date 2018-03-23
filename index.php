@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" charset="utf-8"/>
-	<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+	<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=no" />
 	<title>简单</title>
 	<link rel="shortcut Icon" href="images/head-icon.png">
 	<link rel="stylesheet" type="text/css" href="css/base.css">

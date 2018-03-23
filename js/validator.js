@@ -114,7 +114,7 @@ form.onsubmit = function(){
 	if(errorMsg){
 		dialog.error(errorMsg);
 		submitBtn.innerText = "提交";
-		submitBtn.removeAttribu('disabled',true);
+		submitBtn.removeAttribute('disabled',true);
 		return false;
 	}else{
 		Ajax.send({
