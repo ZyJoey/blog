@@ -1,5 +1,6 @@
 目录
 -----
+- [JavaScript变量生命周期：为何let没有“变量提升”?](https://github.com/ZyJoey/blog/issues/5)
 - [从功能级到工程级代码的思考](https://github.com/ZyJoey/blog/issues/3)
 - [记一次由emoji引起的事故](https://github.com/ZyJoey/blog/issues/2)
 
